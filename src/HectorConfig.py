@@ -28,24 +28,7 @@ config = {
         "lightpwmchannel": 13,
         "lightpositions": (0, 500)
     },
-    "a4988": {
-        "ENABLE": 11,
-        "MS1": 13,
-        "MS2": 15,
-        "MS3": 19,
-        "RESET": 21,
-        "SLEEP": 23,
-        "STEP": 37,
-        "DIR": 33,
-        "numSteps": 260
-    },
-    "arm": {
-        "SENSE": 16
-    },
     "pump": {
         "MOTOR": 18
-    },
-    "ws2812": {
-        "DIN": 12
     }
 }

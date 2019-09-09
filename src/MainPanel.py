@@ -110,7 +110,7 @@ class MainPanel(Screen):
         root2 = BoxLayout()
         root2.add_widget(Image(source='img/empty-glass.png'))
         root2.add_widget(
-            Label(text='Please be sure\n that a glass \nwith min 200 ml \nis placed onto the black fixture.', font_size='30sp'))
+            Label(text='Please be sure\n that a glass \nwith min 200 ml \nis placed onto \nthe black fixture.', font_size='30sp'))
         root.add_widget(root2)
 
         contentOK = Button(text='OK', font_size=60, size_hint_y=0.15)
@@ -119,7 +119,7 @@ class MainPanel(Screen):
         contentCancel = Button(text='Cancel', font_size=60, size_hint_y=0.15)
         root.add_widget(contentCancel)
 
-        popup = Popup(title='LOOK HERE !!!', content=root,
+        popup = Popup(title='', content=root,
                       auto_dismiss=False)
 
         def closeme(button):

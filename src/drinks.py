@@ -2,8 +2,10 @@
 
 drink_list = [
     {
-        "name": "...under\nconstruction",
+        "name": "Gin Mate",
         "recipe": [
+            ("gin", 60)
+            ("mate", 180)
         ]
     }, {
         "name": "Virgin Sunrise",

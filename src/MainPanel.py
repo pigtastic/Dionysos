@@ -113,10 +113,10 @@ class MainPanel(Screen):
             Label(text='Please be sure\n that a glass \nwith min 200 ml \nis placed onto \nthe black fixture.', font_size='30sp'))
         root.add_widget(root2)
 
-        contentOK = Button(text='OK', font_size=60, size_hint_y=0.15)
+        contentOK = Button(text='OK', font_size=60, size_hint_y=0.5)
         root.add_widget(contentOK)
 
-        contentCancel = Button(text='Cancel', font_size=60, size_hint_y=0.15)
+        contentCancel = Button(text='Cancel', font_size=60, size_hint_y=0.5)
         root.add_widget(contentCancel)
 
         popup = Popup(title='', content=root,

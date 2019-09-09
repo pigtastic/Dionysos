@@ -4,7 +4,7 @@ drink_list = [
     {
         "name": "Gin Mate",
         "recipe": [
-            ("gin", 60)
+            ("gin", 60),
             ("mate", 180)
         ]
     }, {

@@ -8,7 +8,7 @@ drink_list = [
             ("mate", 180)
         ]
     }, {
-        "name": "Virgin Sunrise",
+        "name": "Virgin\nSunrise",
         "recipe": [
             ("oj", 160),
             ("gren", 8)

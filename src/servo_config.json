@@ -27,7 +27,7 @@
 	"pump_6": {
 		"name": "Pump 6",
 		"channel": 5,
-		"value": "000_gin"
+		"value": "gin"
 	},
 	"pump_7": {
 		"name": "Pump 7",

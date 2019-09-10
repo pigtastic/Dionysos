@@ -101,7 +101,7 @@ MyScreenManager:
             Button:
                 size_hint_y: 0.5
                 text: '<-- back'
-                font_name: 'Arial'
+                font_name: 'img/Arial'
                 font_size: 20
                 on_press:
                     root.manager.transition.direction = 'up'

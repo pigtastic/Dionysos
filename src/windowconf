@@ -147,6 +147,7 @@ MyScreenManager:
             orientation: 'horizontal'
             Label:
                 text: 'Dionysos'
+                font_name: 'font/Font-Awesome'
                 font_size: 40
             Button:
                 size_hint_x: 0.1

@@ -73,66 +73,11 @@ class HectorHardware:
             GPIO.setup(self.armDir, GPIO.OUT)
         print("done")
 
-        self.arm = cfg["arm"]["SENSE"]
-        if not devEnvironment:
-            GPIO.setup(self.arm, GPIO.IN)
 
         self.pump = cfg["pump"]["MOTOR"]
         if not devEnvironment:
             GPIO.setup(self.pump, GPIO.IN)  # pump off; will be turned on with GPIO.OUT (?!?)
 
-    def light_on(self):
-        if not devEnvironment:
-            GPIO.output(self.lightPin, True)
-
-    def light_off(self):
-        if not devEnvironment:
-            GPIO.output(self.lightPin, False)
-
-    def arm_out(self):
-        if not devEnvironment:
-            GPIO.output(self.armEnable, False)
-        print("move arm out")
-        if not devEnvironment:
-            GPIO.output(self.armDir, True)
-        while not self.arm_pos():
-            if not devEnvironment:
-                GPIO.output(self.armStep, False)
-                time.sleep(.001)
-                GPIO.output(self.armStep, True)
-                time.sleep(.001)
-        if not devEnvironment:
-            GPIO.output(self.armEnable, True)
-        print("arm is in out position")
-
-    def arm_in(self):
-        self.arm_out()
-        if not devEnvironment:
-            GPIO.output(self.armEnable, False)
-            print("move arm in")
-            GPIO.output(self.armDir, False)
-            for i in range(self.armSteps):
-                GPIO.output(self.armStep, False)
-                time.sleep(.001)
-                GPIO.output(self.armStep, True)
-                time.sleep(.001)
-            GPIO.output(self.armEnable, True)
-        print("arm is in in position")
-
-    def arm_pos(self):
-        if not devEnvironment:
-            pos = GPIO.input(self.arm)
-            print("arm_pos: %d" % pos)
-
-            pos = (pos != 0)
-            if pos:
-                print("arm_pos = out")
-            else:
-                print("arm_pos = in")
-        else:
-            pos = 100
-            print("arm_pos: %d" % pos)
-        return pos
 
     def scale_readout(self):
         if not devEnvironment:
@@ -250,12 +195,10 @@ if __name__ == "XX__main__":
             hector.valve_close(hector.valveChannels[i])
         input("Bitte Glas auf die Markierung stellen")
         # hector.ping(1)
-        hector.arm_out()
         hector.valve_dose(1, 100)
         hector.valve_dose(3, 20)
         hector.finger(1)
         hector.valve_dose(11, 100)
-        hector.arm_in()
         hector.ping(3)
         hector.finger(0)
         hector.cleanAndExit()

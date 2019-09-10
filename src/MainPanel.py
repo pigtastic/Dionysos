@@ -66,16 +66,13 @@ class MainPanel(Screen):
     def initVent(self):
         print("Prepare vets.")
         h = HectorHardware(config)
-        h.light_on()
-        time.sleep(1)
-        h.arm_in()
+
 
         h.pump_stop()
         for vnum in range(12):
             print("Vent %d closing..." % (vnum,))
-            time.sleep(1)
+            time.sleep(0.2)
             h.valve_close(vnum)
-        h.light_off()
 
     def isalcoholic(self, drink):
         for ing, _ in drink["recipe"]:
@@ -144,11 +141,9 @@ class MainPanel(Screen):
 
         def makeDrink(parentwindow):
             drinks = self.drinkOnScreen[drink]
-
             hector = HectorHardware(config)
-            hector.light_on()
-            time.sleep(1)
-            hector.arm_out()
+
+            
 
             for ingridient in drinks["recipe"]:
                 hector.valve_dose(pumpList[ingridient[0]], ingridient[1])
@@ -160,8 +155,6 @@ class MainPanel(Screen):
 
             time.sleep(1)
             self.db.countUpDrink(drinks["name"])
-            hector.arm_in()
-            hector.light_off()
             hector.finger(1)
             hector.ping(3)
             hector.finger(0)

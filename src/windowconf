@@ -100,8 +100,8 @@ MyScreenManager:
                 on_press: root.dowork(2)
             Button:
                 size_hint_y: 0.5
-                text: '<-- back'
-                font_name: 'img/Arial'
+                text: 'fas fa-arrow-left'
+                font_name: 'font/Font-Awesome'
                 font_size: 20
                 on_press:
                     root.manager.transition.direction = 'up'

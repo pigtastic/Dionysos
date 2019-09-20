@@ -71,7 +71,7 @@ class MainPanel(Screen):
         h.pump_stop()
         for vnum in range(12):
             print("Vent %d closing..." % (vnum,))
-            time.sleep(0.2)
+            time.sleep(1)
             h.valve_close(vnum)
 
     def isalcoholic(self, drink):

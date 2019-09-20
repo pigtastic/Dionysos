@@ -101,7 +101,6 @@ MyScreenManager:
             Button:
                 size_hint_y: 0.5
                 text: '<-- back'
-                font_name: 'img/Arial'
                 font_size: 20
                 on_press:
                     root.manager.transition.direction = 'up'
@@ -148,6 +147,7 @@ MyScreenManager:
             orientation: 'horizontal'
             Label:
                 text: 'Dionysos'
+                font_name: 'font/Font-Awesome'
                 font_size: 40
             Button:
                 size_hint_x: 0.1

@@ -14,7 +14,7 @@ print("")
 
 if hardware:
     h.light_on()
-    time.sleep(1)
+    time.sleep(3)
     h.arm_in()
 
     h.pump_stop()
